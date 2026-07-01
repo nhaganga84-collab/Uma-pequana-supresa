@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma pequena surpresa 🌸</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #e6f7ff, #fff5e6);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.card {
+  width: 92%;
+  max-width: 430px;
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  animation: fadeIn 1.2s ease;
+  position: relative;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #ff4d88;
+  font-size: 22px;
+}
+
+/* Text */
+p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #ff4d88;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+  margin-top: 15px;
+  text-align: center;
+  color: #444;
+}
+
+/* Status box */
+.status {
+  margin-top: 15px;
+  font-size: 12.5px;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Heart animation */
+.heart {
+  position: absolute;
+  color: #ff4d88;
+  animation: floatUp 5s linear infinite;
+  font-size: 18px;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Secret love message */
+.secret {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff0f5;
+  color: #c2185b;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🌸 Olá</h1>
+
+<p>
+Oi… 🌸<br><br>
+
+Hoje eu só quis deixar algo simples aqui para ti.<br><br>
+
+Depois de te ver novamente, lembrei-me de como é bom quando duas pessoas conseguem simplesmente conversar, rir e esquecer um pouco o resto do mundo.<br><br>
+
+Não estou a escrever isto para te pressionar, nem para mudar nada à força.<br><br>
+
+Só quero que saibas que, no meio de tudo, ainda guardo carinho por ti — um carinho calmo, sem pressa, sem peso.<br><br>
+
+Talvez a vida tenha colocado pausas no nosso caminho… mas hoje senti que pelo menos uma conversa leve ainda pode existir entre nós 🌸<br><br>
+
+E isso já é bonito.
+</p>
+
+<button class="btn" onclick="showMessage()">
+Um último clique 💖
+</button>
+
+<div id="msg" class="hidden">
+✨ Obrigado por leres isto.<br>
+Cuida-te… e continua a sorrir 🌸
+</div>
+
+<div id="secret" class="secret">
+💗 Às vezes o coração não fala alto…<br>
+mas ele ainda sente coisas boas em silêncio.
+</div>
+
+<div class="status">
+❤️ Sorriso detectado: ✔<br>
+☕ Nível de fofura: 100%<br>
+💾 Estado emocional: estável<br>
+🐛 Bugs: 0<br>
+🌸 Missão: Fazer-te sorrir
+</div>
+
+</div>
+
+<script>
+function showMessage(){
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("secret").style.display = "block";
+}
+
+/* floating hearts */
+function hearts(){
+  const h = document.createElement("div");
+  h.classList.add("heart");
+  h.innerHTML = "💖";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = (12 + Math.random()*18) + "px";
+  document.body.appendChild(h);
+
+  setTimeout(()=>{h.remove()},5000);
+}
+
+setInterval(hearts, 400);
+</script>
+
+</body>
+</html>
